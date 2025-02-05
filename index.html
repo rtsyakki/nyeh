@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Animation</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: red;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+            position: relative;
+        }
+        .cat {
+            width: 150px;
+            margin-top: 20px;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            100% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine Caca?</h1>
+        <button class="btn yes" onclick="acceptLove()">Yes</button>
+        <button class="btn no" onclick="growNo()">ogah</button>
+        <br>
+        <img src="cat.jpeg" class="cat" alt="Cute cat">
+    </div>
+
+    <script>
+        let noBtn = document.querySelector(".no");
+        let noSize = 16;
+        
+        function growNo() {
+            noSize += 10;
+            noBtn.style.fontSize = noSize + "px";
+            if (noSize >= 60) {
+                noBtn.innerText = "Just say Yes!";
+            }
+        }
+        
+        function acceptLove() {
+            alert("Yay! Happy Valentine's Day!");
+        }
+    </script>
+</body>
+</html>
